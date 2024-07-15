@@ -1,0 +1,45 @@
+.register-form{
+	background: #fff;
+    padding: 5px;
+    border:1px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(178, 204, 241, 0.8);
+    width: 90%;
+    max-width: 400px;
+    color:black;
+}
+.register-form h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color:black;
+    text-align: center;
+}
+.register-form .form-group {
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+}
+.register-form .form-group label {
+    display: block;
+    margin-bottom: 6px;
+}
+ .form-group input {
+    
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+.register-form .form-group button {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 3px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.register-form .form-group button {
+    width: auto; /* Make the button width auto */
+    align-self: flex-start; /* Align button to the start (left) */
+}
