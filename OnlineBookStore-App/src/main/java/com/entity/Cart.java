@@ -6,8 +6,8 @@ public class Cart {
 	private int User_id;
 	private String BookName;
 	private String Author;
-	private String Price;
-	private String TotalPrice;
+	private double Price;
+	private double TotalPrice;
 	public int getCart_id() {
 		return Cart_id;
 	}
@@ -38,16 +38,16 @@ public class Cart {
 	public void setAuthor(String author) {
 		Author = author;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return Price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		Price = price;
 	}
-	public String getTotalPrice() {
+	public double getTotalPrice() {
 		return TotalPrice;
 	}
-	public void setTotalPrice(String totalPrice) {
+	public void setTotalPrice(double totalPrice) {
 		TotalPrice = totalPrice;
 	}
 	

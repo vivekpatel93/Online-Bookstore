@@ -57,9 +57,8 @@ public class LoginServlet extends HttpServlet {
 				if(us!=null) {
 					
 					session.setAttribute("userobj",us);
-					System.out.println(us);
-					response.sendRedirect("home.jsp");
-					System.out.println("HELLO");
+					response.sendRedirect("Front1.jsp");
+					
 					
 				}else {
 					

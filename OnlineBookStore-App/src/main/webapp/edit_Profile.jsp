@@ -1,15 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="com.DAO.BooksDAOImpl" %>
-    <%@ page import="com.DB.DBConnect" %>
-        <%@ page import="com.entity.BookDtls" %>
+    
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin:Edit Books</title>
-<%@include file="Common2.jsp" %>
+<title>User:Edit Profile</title>
+<%@include file="Common_content/Common1.jsp" %>
 <style>
 .register-form{
 	background: #fff;
@@ -43,12 +41,6 @@
     border-radius: 4px;
     font-size: 13px;
 }
-.form-group select {
-    padding: 3px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 13px;
-}
 .register-form .form-group button {
     background: #444;
     color: #fff;
@@ -65,40 +57,31 @@
 </style>
 </head>
 <body style="background-color:#f0f1f2;">
-<%@include file="navbar.jsp" %>
 
-<section class="col-md-4 offset-md-4 mt-2">
+<%@include file="Common_content/nav-bar.jsp" %>
+<section class="col-md-4 offset-md-4 p-4 mt-4">
 <div class="register-form">
-<h2>Edit Books</h2>
-<%
-int id=Integer.parseInt(request.getParameter("id"));
-BooksDAOImpl dao=new BooksDAOImpl(DBConnect.getCon());
-BookDtls b=dao.getBookById(id);
-%>
-<form action="../editbooks" method="post" id="bookform">
-<input type="hidden" name="id" value="<%=b.getBook_id() %>">
+<h2 class="text-center text-primary">Edit Profile</h2>
+
+<form action="" method="post" id="bookform">
 
                 <div class="form-group">
-                    <label for="username">Book Name:</label>
-                    <input type="text" name="bookname" placeholder="Bookname" value="<%=b.getBookName() %>" required>
+                    <label for="username">Complete Name:</label>
+                    <input type="text" name="bookname" placeholder="Name" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Author:</label>
-                    <input type="text" name="author" placeholder="FirstName SecondName" value="<%=b.getAuthor() %>" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="price">Price:</label>
-                    <input type="text" name="price"placeholder="Rs..." value="<%=b.getPrice() %>" required>
+                    <label for="name">Contact Number:</label>
+                    <input type="number" name="author" placeholder="Enter 10 digit number" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="contact">Book Status:</label>
-                    <select id="books" name="status" form="bookform">
-                    	<option value="Others">--Select--</option>
-  						<option value="Active">Active</option>
-  						<option value="Inactive">Inactive</option>
-  				</select>
+                    <label for="price">Email:</label>
+                    <input type="email" name="author" placeholder="xyz@gmail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact">Password:</label>
+                    <input type="text" name="author" placeholder="W_xrevuyr$#99" required>
                 </div>          
                 <div class="form-group">
                     <button type="submit">Update   </button>
@@ -107,6 +90,6 @@ BookDtls b=dao.getBookById(id);
             </form>
 </div>
 </section>
-<%@include file="adminfooter.jsp" %>
+<%@include file="Common_content/footer.jsp" %>
 </body>
 </html>

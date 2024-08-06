@@ -1,5 +1,9 @@
 
 <!-- <div class="container-fluid" style="height: 7px;background-color:#303f9f;"></div> -->
+<%@ page import="com.entity.User" %>
+<%
+		User us2=(User)session.getAttribute("userobj");
+	%>
 <div class="container-fluid p-3 bg-light">
 <div class="row">
 <div class="col-md-3 text-success">
@@ -11,11 +15,27 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
      </form>
 </div>
-<div class="col-md-3">
-<a href="login.jsp" class="btn btn-success"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-<a href="register.jsp" class="btn btn-primary text-white"><i class="fa-solid fa-user-plus"></i> Register</a>
+<%
+		if(us2==null){
+		%>
+		<div class="col-md-3">
+			<a href="login.jsp" class="btn btn-success">Login</a>
+			<a href="register.jsp" class="btn btn-primary text-white"><i class="fa-solid fa-user-plus"></i> Register</a>
 
-</div>
+	   </div>
+		<% 
+		}else{
+		%>
+		<div class="col-md-3">
+			<a href="checkout.jsp" class="btn btn-primary"><i class="fa-solid fa-cart-shopping fa-1x"></i></a>
+			<a href="login.jsp" class="btn btn-success"><i class="fa-solid fa-user"></i> <%=us2.getUserName() %></a>
+			<a href="admin/logout.jsp" class="btn btn-primary text-white"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
+		</div>
+		<%
+		}
+		%>
+
 </div>
 </div>
 
@@ -42,8 +62,8 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-light my-2 my-sm-0 mr-3" type="submit"><i class="fa-solid fa-gear"></i> Setting </button>
-      <button class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-address-book"></i> Contact Us</button>
+      <a href="setting.jsp"class="btn btn-light my-2 my-sm-0 mr-3" type="submit"><i class="fa-solid fa-gear"></i> Setting </a >
+      <a class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fa-solid fa-address-book"></i> Contact Us</a>
     </form>
   </div>
 </nav>

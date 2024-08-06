@@ -26,8 +26,8 @@ background-color:#c1cfdb;
 </head>
 <body style="background-color:#dcdedc;">
 	<%
-		User us=(User)session.getAttribute("us");
-		%>
+		User us=(User)session.getAttribute("userobj");
+	%>
 	<%@include file="Common_content/nav-bar.jsp" %>
 	<div class="container-fluid back-img">
 	<h2>E-Bookstore Management System</h2>
@@ -90,7 +90,7 @@ background-color:#c1cfdb;
 		<% 
 		}else{
 		%>
-		<a href="cart?Book_id=<%=b.getBook_id() %>&& User_id=<%=us.getUser_id()%>" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a>
+		<a href="cart?Book_id=<%= b.getBook_id() %>&User_id=<%= us.getUser_id() %>" class="btn btn-danger btn-sm ml-1"><i class="fa-solid fa-cart-shopping"></i> Add Cart</a>
 		<%
 		}
 		%>
